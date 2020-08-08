@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+   <button id="test"></button>
+</div>
+
+@section Scripts{ 
+    <script>
+        $('#test').click(function (e) {
+
+            $.ajax({
+                url: 'Home/Profile?a=6.4249594&b=4.9192771',
+                type: 'POST',
+                data: {
+                    'profileModel': {}
+                },
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                },
+                error: function (request, error) {
+                    console.log(error);
+                }
+            });
+
+        });
+
+    </script>
+}
